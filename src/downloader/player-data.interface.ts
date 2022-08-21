@@ -3,6 +3,7 @@ export interface PlayerData {
   ads: object;
   video: {
     id: string;
+    embed?: boolean;
     file: string;
     file_cast?: any;
     cast_available: boolean;

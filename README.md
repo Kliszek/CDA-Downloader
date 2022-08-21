@@ -24,7 +24,7 @@ There is one POST endpoint:
 
 Expected payload is:
 
-| Property   | Type   | Description                 |
-|------------|--------|-----------------------------|
-| `videoUrl` | string | the direct url to the video |
-| `quality`  | string | (optional) quality code     |
+| Property  | Type   | Description             |
+|-----------|--------|-------------------------|
+| `videoId` | string | the ID of the video     |
+| `quality` | string | (optional) quality code |

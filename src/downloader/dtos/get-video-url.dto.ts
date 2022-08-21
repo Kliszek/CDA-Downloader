@@ -1,4 +1,4 @@
 export class GetVideoUrlDTO {
-  videoUrl: string;
+  videoId: string;
   quality?: string;
 }
