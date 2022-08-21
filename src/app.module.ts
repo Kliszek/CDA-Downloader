@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { DownloaderModule } from 'downloader/downloader.module';
 
 @Module({
-  imports: [],
+  imports: [DownloaderModule],
   controllers: [],
   providers: [],
 })
