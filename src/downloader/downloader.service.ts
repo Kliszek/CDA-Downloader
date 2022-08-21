@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
 import { PlayerData } from 'downloader/player-data.interface';
+import { GetVideoUrlDTO } from 'downloader/dtos/get-video-url.dto';
 
 interface CDAPayload {
   id: number;
@@ -18,16 +19,16 @@ interface CDAPayload {
 
 @Injectable()
 export class DownloaderService {
-  async getVideoUrl(url: string, quality: string): Promise<string> {
-    const playerData = await this.getPlayerData(url);
-    console.log(playerData);
+  async getVideoUrl(data: GetVideoUrlDTO): Promise<string> {
+    const playerData = await this.getPlayerData(data.videoUrl);
+
     const payload = this.createCDAPayload(
       playerData.video.id,
-      quality,
+      data.quality || playerData.video.quality,
       playerData.video.ts,
       playerData.video.hash2,
     );
-    const response = await axios.post(url, payload);
+    const response = await axios.post(data.videoUrl, payload);
     return response.data;
   }
 
