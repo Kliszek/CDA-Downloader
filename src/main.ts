@@ -7,6 +7,7 @@ async function bootstrap() {
   app.enableCors({ origin: true });
   app.use(json({ limit: '20mb' }));
   app.use(urlencoded({ extended: true, limit: '20mb' }));
-  await app.listen(3000);
+  const portNumber: number = process.env.PORT ? +process.env.PORT : 3000;
+  await app.listen(portNumber);
 }
 bootstrap();
