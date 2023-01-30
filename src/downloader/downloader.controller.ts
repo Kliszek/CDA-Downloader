@@ -8,7 +8,7 @@ export class DownloaderController {
 
   @Post('')
   async getVideoUrl(@Body() getVideoUrlDto: GetVideoUrlDTO) {
-    console.log(getVideoUrlDto);
+    // console.log(getVideoUrlDto);
     return this.downloaderService.getVideoUrl(getVideoUrlDto);
   }
 }
